@@ -73,7 +73,7 @@ calculatePathlength <- function(binaryInteractionTable){
   ## calculate shortest path between all vertices
   distMatrix <- distances(g)
   ## Output as a long format data.table
-  combinations <- melt(distMatrix)
+  combinations <- reshape2::melt(distMatrix)
   combinations <- as.data.table(combinations)
   names(combinations) = c("x","y","dist")
   combinations$x <- as.character(combinations$x)
